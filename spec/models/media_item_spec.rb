@@ -27,4 +27,25 @@ describe MediaItem do
     end
   end
 
+  context '#fetching video id from YouTube link' do
+    let(:media_item_1) { FactoryGirl.build(:media_item,
+      source_link: "http://youtu.be/sGE4HMvDe-Q")
+    }
+    let(:media_item_2) {FactoryGirl.build(:media_item,
+      source_link: "https://www.youtube.com/p/A0C3C1D163BE880A?hl=en_US&fs=1")
+    }
+
+    it 'should be valid for correct youtube link' do
+      expect(media_item.youtube_id).to eq("_NsE9bmDEb4")
+    end
+
+    it 'should be valid for correct youtu.be link' do
+      expect(media_item_1.youtube_id).to eq("sGE4HMvDe-Q")
+    end
+
+    it 'should be valid for correct youtube (fullscreen mode) link' do
+      expect(media_item_2.youtube_id).to eq("p/A0C3C1D163BE880A")
+    end
+  end
+
 end
