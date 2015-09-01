@@ -271,3 +271,43 @@ ORDER BY c.conname
   [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "media_items" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
   [1m[36m (5.3ms)[0m  [1mTRUNCATE TABLE "public"."media_items", "public"."users" RESTART IDENTITY CASCADE;[0m
   [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "media_items" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "media_items" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.2ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'sharing_test'[0m
+  [1m[35m (5.3ms)[0m  TRUNCATE TABLE "public"."media_items", "public"."users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "media_items" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "media_items" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (28.8ms)[0m  [1mTRUNCATE TABLE "public"."media_items", "public"."users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "media_items" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "media_items" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (43.6ms)[0m  TRUNCATE TABLE "public"."media_items", "public"."users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "media_items" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "media_items" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (5.4ms)[0m  [1mTRUNCATE TABLE "public"."media_items", "public"."users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "media_items" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "media_items" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.6ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (1.2ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'sharing_test'[0m
+  [1m[35m (30.0ms)[0m  TRUNCATE TABLE "public"."media_items", "public"."users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "media_items" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "media_items" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (30.4ms)[0m  [1mTRUNCATE TABLE "public"."media_items", "public"."users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "media_items" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "media_items" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL[0m
+  [1m[35m (26.3ms)[0m  TRUNCATE TABLE "public"."media_items", "public"."users" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "media_items" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "media_items" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL
+  [1m[36m (5.3ms)[0m  [1mTRUNCATE TABLE "public"."media_items", "public"."users" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "media_items" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL
