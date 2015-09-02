@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :owned_items, -> { where user_media_items: { owner: true } },
            through: :user_media_items, source: :media_item
 
+  accepts_nested_attributes_for :user_media_items
+
   validates :firstname, presence: true
   validates :lastname, presence: true
 end

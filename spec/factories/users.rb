@@ -9,11 +9,14 @@ FactoryGirl.define do
     email
     password 'password'
     password_confirmation 'password'
+  end
 
+  factory :media_owner, parent: :user do
+    firstname 'Mike'
   end
 
   factory :user_media_item , class: 'UserMediaItem' do
-    user
+    association :user, :media_owner
     owner true
     media_item
   end
@@ -24,8 +27,8 @@ FactoryGirl.define do
     media_item
   end
 
-  factory :user_with_owned_media, parent: :user do
-    after(:create) { |user| create(:user_media_item, user: user) }
+  factory :user_with_owned_media, parent: :media_owner do
+    after(:create) { |media_owner| create(:user_media_item, user: media_owner) }
   end
 
   factory :user_with_shared_media, parent: :user do

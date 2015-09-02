@@ -1,4 +1,14 @@
 .row
   .col-md-6
-    index
-    %iframe{:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :height => "430", :src => "http://www.youtube.com/embed/zzlv2AIkjR8", :title => "YouTube video player", :width => "640"}
+    = "There are #{@media_items.count} published"
+
+    %table.table
+      %tr
+        %th.col-sm-14 Video
+        %th.col-sm-2 Owner
+      - @media_items.each do |item|
+        %tr
+          %td
+            %frame{:allowscriptaccess => "always", :allowFullScreen => "true", :frameborder => "0", :height => "430", :src => "http://www.youtube.com/embed/zzlv2AIkjR8", :title => "YouTube video player", :width => "640"}
+
+          %td= item.user.firstname
