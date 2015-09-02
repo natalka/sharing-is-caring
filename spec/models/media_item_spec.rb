@@ -3,12 +3,12 @@ require 'spec_helper'
 describe MediaItem do
   let(:media_item) { FactoryGirl.build(:media_item) }
 
-
   it 'should not be published be default' do
     expect(MediaItem.new).to_not be_published
   end
 
   it { should validate_presence_of :source_link }
+  it { should have_many :users }
 
   context '#validates YouTube url' do
     let(:media_item_domain) { FactoryGirl.build(:media_item_wrong_domain) }

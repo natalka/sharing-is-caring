@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150901162241) do
+ActiveRecord::Schema.define(version: 20150902070243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 20150901162241) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "user_media_items", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "media_item_id"
+    t.boolean  "owner",         default: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "user_media_items", ["media_item_id"], name: "index_user_media_items_on_media_item_id", using: :btree
+  add_index "user_media_items", ["user_id"], name: "index_user_media_items_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
